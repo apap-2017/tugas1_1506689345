@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head th:replace="fragments/fragments :: head">
+    
+  </head>
+  <body>
+      <nav th:replace="fragments/fragments :: header">
+     
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <main class="col-sm-12" role="main">
+          <h1>Sistem Informasi Kependudukan Online Provinsi DKI Jakarta</h1>
+          <hr/>
+			<h3>Gunakanlah sistem sewajarnya</h3>
+          <hr/>
+
+			<div class="row">
+				<div class="col-md-6">
+					<h3>Lihat Data Penduduk Berdasarkan NIK</h3>
+			          <p><b>Masukkan Nomor Induk Kependudukan</b></p>
+			          <form action="/penduduk">
+			            <input required="required" name="nik"/>
+			            <button type="submit">Lihat</button>
+			          </form>
+				</div>
+				
+				<div class="col-md-6">
+					  <h3>Lihat Data Keluarga Berdasarkan NKK</h3>
+			          <p><b>Masukkan Nomor Kartu Keluarga</b></p>
+			          <form action="/keluarga">
+			            <input required="required" name="nkk"/>
+			            <button type="submit">Lihat</button>
+			          </form>
+				</div>
+			</div>
+
+          
+        </main>
+      </div>
+    </div>
+
+	<span th:replace="fragments/fragments :: footer"></span>
+  </body>
+</html>

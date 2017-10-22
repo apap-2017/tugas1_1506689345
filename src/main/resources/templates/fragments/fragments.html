@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head th:fragment="head">
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+	<title>SISIDUK | 15006689345 | Bella Nadhifah Agustina</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="/css/font-awesome.min.css"/>
+    
+
+    <style>
+        body {
+          padding-top: 5rem;
+        	background-image:url("/bg.jpg");
+        	background-size:cover;
+        }
+        main {
+        	background-color:rgba(255, 255, 255, .45);
+        	border-radius:10px;
+        	padding: 20px;
+        }
+        
+        .bg-dark {
+        	background-color: #C8102E !important;
+        }
+
+    </style>
+
+  </head>
+  <body>
+      <nav th:fragment="header" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container">
+	      <a class="navbar-brand" href="/">SIDUK</a>
+	      <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="navbar-toggler-icon"></span>
+	      </button>
+	
+	      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+	        <ul class="navbar-nav mr-auto">
+	          <li class="nav-item active">
+	            <a class="nav-link" href="/">Home <i class="fa fa-home" aria-hidden="true"></i></a>
+	          </li>
+	          <li class="nav-item">
+	            <a class="nav-link" href="/penduduk/tambah">Tambah Penduduk <i class="fa fa-plus" aria-hidden="true"></i>
+	            </a>
+	          </li>
+	          <li class="nav-item">
+	            <a class="nav-link" href="/keluarga/tambah">Tambah Keluarga <i class="fa fa-plus" aria-hidden="true"></i>
+	            </a>
+	          </li>
+	          <li class="nav-item">
+	            <a class="nav-link" href="/penduduk/cari">Cari Data <i class="fa fa-search" aria-hidden="true"></i></a>
+	          </li>
+	        </ul>
+	        
+	      </div>
+	  </div>
+    </nav>
+    
+   
+
+	<span th:fragment="footer">
+		<main class="container" style="padding:10px;margin-top:50px;text-align:center;font-size:10pt;font-weight:bold;font-style:italic;">Copyright &copy; Bella Nadhifah Agustina - 1506689345 | Tugas 1 APAP</main>
+	    <!-- Optional JavaScript -->
+	    <script src="/js/jquery-3.2.1.slim.min.js"></script>
+	    <script src="/js/bootstrap.min.js"></script>
+	    <script src="/js/jquery.dataTables.min.js"></script>
+	    <script>
+		    $(document).ready(function(){
+			    $('#myTable').DataTable();
+			});
+	    </script>
+	</span>
+  </body>
+</html>

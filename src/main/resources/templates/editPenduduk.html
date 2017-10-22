@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head th:replace="fragments/fragments :: head">
+    
+
+  </head>
+  <body>
+      <nav th:replace="fragments/fragments :: header">
+     
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <main class="col-sm-12" role="main">
+          <h1><i class="fa fa-cog" aria-hidden="true"></i> Data Penduduk</h1>
+          <form th:object="${penduduk}" th:action="${oldpenduduk.nik} == null ? '/penduduk/tambah/' : '/penduduk/ubah/' + ${oldpenduduk.nik}" method="POST">
+			  <div class="form-group">
+			    <label for="inputNama">Nama</label>
+			    <input required="required" name="nama" th:value="${oldpenduduk.nama}" type="text" class="form-control" id="inputNama" />
+			  </div>
+			  <div class="form-group">
+			    <label for="inputTempatLahir">Tempat Lahir</label>
+			    <input required="required" name="tempat_lahir" th:value="${oldpenduduk.tempat_lahir}" type="text" class="form-control" id="inputTempatLahir"/>
+			  </div>
+			  <div class="form-group">
+			    <label for="inputTanggalLahir">Tanggal Lahir</label>
+			    <input required="required" name="tanggal_lahir" th:value="${oldpenduduk.tanggal_lahir}" type="text" class="form-control" id="inputTanggalLahir"/>
+			  </div>
+			  <div class="form-group">
+			    <label for="inputJenisKelamin">Jenis Kelamin</label>
+			    <select required="required" name="jenis_kelamin" class="form-control" id="inputJenisKelamin">
+			    	<option value="0" th:selected="${oldpenduduk.jenis_kelamin == 0}">Pria</option>
+			    	<option value="1" th:selected="${oldpenduduk.jenis_kelamin == 1}">Wanita</option>
+			    </select>
+			  </div>
+			  <div class="form-group">
+			    <label for="inputKewarganegaraan">Kewarganegaraan</label>
+			    <select required="required" name="is_wni" class="form-control" id="inputKewarganegaraan">
+			    	<option value="1" th:selected="${oldpenduduk.is_wni == 1}">WNI</option>
+			    	<option value="0" th:selected="${oldpenduduk.is_wni == 0}">Bukan WNI</option>
+			    </select>
+			  </div>
+			  <div class="form-group">
+			    <label for="inputIdKeluarga">Id Keluarga</label>
+			    <input required="required" name="id_keluarga" th:value="${oldpenduduk.keluarga.id}" type="text" class="form-control" id="inputIdKeluarga"/>
+			  </div>
+			  <div class="form-group">
+			    <label for="inputAgama">Agama</label>
+			    <input required="required" name="agama" th:value="${oldpenduduk.agama}" type="text" class="form-control" id="inputAgama"/>
+			  </div>
+			  <div class="form-group">
+			    <label for="inputPekerjan">Pekerjaan</label>
+			    <input required="required" name="pekerjaan" th:value="${oldpenduduk.pekerjaan}" type="text" class="form-control" id="inputPekerjan"/>
+			  </div>
+			  <div class="form-group">
+			    <label for="inputPerkawinan">Status Perkawinan</label>
+			    <select required="required" name="status_perkawinan" class="form-control" id="inputPerkawinan">
+			    	<option value="KAWIN" th:selected="${oldpenduduk.status_perkawinan == 'KAWIN'}">KAWIN</option>
+			    	<option value="BELUM KAWIN" th:selected="${oldpenduduk.status_perkawinan == 'BELUM KAWIN'}">BELUM KAWIN</option>
+			    </select>
+			  </div>
+			  <div class="form-group">
+			    <label for="inputStatusDalamKeluarga">Status Dalam Keluarga</label>
+			    <input required="required" name="status_dalam_keluarga" th:value="${oldpenduduk.status_dalam_keluarga}" type="text" class="form-control" id="inputStatusDalamKeluarga"/>
+			  </div>
+			  <div class="form-group">
+			    <label for="inputGolonganDarah">Golongan Darah</label>
+			    <select required="required" name="golongan_darah" class="form-control" id="inputGolonganDarah">
+			    	<option value="O" th:selected="${oldpenduduk.golongan_darah == 'O'}">O</option>
+			    	<option value="A" th:selected="${oldpenduduk.golongan_darah == 'A'}">A</option>
+			    	<option value="B" th:selected="${oldpenduduk.golongan_darah == 'B'}">B</option>
+			    	<option value="AB" th:selected="${oldpenduduk.golongan_darah == 'AB'}">AB</option>
+			    </select>
+			  </div>
+			  <div class="form-group">
+			    <label for="inputKematian">Status Kematian</label>
+			    <select required="required" name="is_wafat" class="form-control" id="inputKematian">
+			    	<option value="0" th:selected="${oldpenduduk.is_wafat == 0}">Hidup</option>
+			    	<option value="1" th:selected="${oldpenduduk.is_wafat == 1}">Wafat</option>
+			    </select>
+			  </div>
+			  <button type="submit" class="btn btn-primary">Submit</button>
+			  
+		  </form>
+
+          
+        </main>
+      </div>
+    </div>
+
+	<span th:replace="fragments/fragments :: footer"></span>
+  </body>
+</html>

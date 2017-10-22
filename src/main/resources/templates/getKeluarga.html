@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head th:replace="fragments/fragments :: head">
+
+  </head>
+  <body>
+      <nav th:replace="fragments/fragments :: header">
+     
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <main class="col-sm-12" role="main">
+
+          <h3>Lihat Data Keluarga Berdasarkan NKK</h3>
+          <p><b>Masukkan Nomor Kartu Keluarga</b></p>
+          <form action="/keluarga">
+            <input name="nkk"/>
+            <button type="submit">Lihat</button>
+          </form>
+
+          
+        </main>
+      </div>
+    </div>
+
+
+    <span th:replace="fragments/fragments :: footer"></span>
+  </body>
+</html>
